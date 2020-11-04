@@ -18,7 +18,7 @@ todos = [
   }
 ]
 
-class Todo(Resource):
+class Polygon(Resource):
   def get(self, id):
     for todo in todos:
       if(id == todo["id"]):
