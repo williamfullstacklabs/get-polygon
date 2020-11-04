@@ -1,6 +1,7 @@
 from flask_restful import Resource
 
 import numpy as np
+from flask import request
 from requests.utils import quote
 from skimage.measure import find_contours, points_in_poly, approximate_polygon
 from skimage import io
