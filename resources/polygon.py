@@ -16,13 +16,15 @@ class Polygon(Resource):
     width = request.args.get('width')
     height = request.args.get('height')
 
-    midX = int(width) / 2
-    midY = int(height) / 2
+    midX = int(width)/2
+    midY = int(height)/2
     str_Center = center_latitude + "," + center_longitude
     str_Size = width + "x" + height
     # Styled google maps url showing only the buildings
     safeURL_Style = quote('feature:landscape.man_made|element:geometry.stroke|visibility:on|color:0xffffff|weight:1')
     urlBuildings = "http://maps.googleapis.com/maps/api/staticmap?center=" + str_Center + "&zoom=" + mapZoom + "&format=png32&sensor=false&size=" + str_Size + "&maptype=roadmap&style=visibility:off&style=" + safeURL_Style + "&key=AIzaSyAFLAidtaOcjxTdYaWan2NQ4y8f8tWe2N4"
+
+    print(urlBuildings)
 
     mainBuilding = None
     imgBuildings = io.imread(urlBuildings)
